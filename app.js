@@ -2,13 +2,9 @@ const rollDice = document.querySelector("#rollBtn")
 const theMessage = document.querySelector("#message")
 const currentScore = document.querySelector("#scoreUpdate")
 
-
 let gameScore = 0;
 let fail = 1;
 let winValue = 20;
-
-let gameOver = false;
-
 
 let diceSide = {
     d1:"./images/1.png",
@@ -44,6 +40,5 @@ const rollDie = ()=>{
         theMessage.textContent = "Keep on Rollin'"
     }
 }
-
 
 rollDice.addEventListener("click", rollDie)
