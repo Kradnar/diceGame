@@ -13,11 +13,25 @@
     align-items: center;
 }
 #score {
-    color: yellow;
+    box-sizing: border-box;
+    border-width: 5px;
+    border-style: double;
+    border-color: black;
+    background-color: wheat;
+    padding: 0px 50px 20px;
+    color: purple;
     font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #dice {
-    color: red;
+    box-sizing: border-box;
+    border-width: 5px;
+    border-style: double;
+    padding: 50px 35px 50px;
+    border-color: black;
+    background-color: wheat;
     font-size: 50px;
 }
 #roll {
@@ -28,6 +42,17 @@
     background-color: slategrey;
     color: greenyellow;
     font-size: 50px;
+}
+#message {
+    box-sizing: border-box;
+    border-width: 5px;
+    border-style: double;
+    border-color: black;
+    background-color: wheat;
+    color: blueviolet;
+    padding: 15px;
+    text-align: center;
+
 }
 #rules {
     display: flex;
