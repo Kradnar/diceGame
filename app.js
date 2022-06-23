@@ -1,11 +1,14 @@
+const rollDice = document.querySelector("#rollBtn")
+const theMessage = document.querySelector("#message")
+const currentScore = document.querySelector("#scoreUpdate")
+
+
 let gameScore = 0;
 let fail = 1;
-let diceValue = 0;
 let winValue = 20;
+
 let gameOver = false;
 
-const rollDice = document.querySelector("#roll")
-const currentScore = document.querySelector("#score")
 
 let diceSide = {
     d1:"./images/1.png",
@@ -16,19 +19,35 @@ let diceSide = {
     d6:"./images/6.png"
 }
 
-// rollDice.addEventListener("click", rollDie)
-rollDice.addEventListener("click", ()=>{
-    console.log("Roll clicked")
-    ranDie = Math.floor((Math.random()*6)+1)
-    document.getElementById("dice").src = diceSide["d" + ranDie];
-});
-
-
 const rollDie = ()=>{
     console.log("clicked")
     ranDie = Math.floor((Math.random()*6)+1)
     document.getElementById("dice").src = diceSide["d" + ranDie];
+    console.log(ranDie);
+    gameScore = (gameScore + ranDie);
+    console.log(gameScore);
+    currentScore.textContent = gameScore
+
+    if (ranDie == fail && gameScore <= winValue) {
+        console.log("fail");
+        gameScore = 0;
+        currentScore.textContent = 0;
+        theMessage.textContent = "You Lose!!! Click Roll the Dice to try again."
+    }
+    else if (gameScore >= winValue) {
+        console.log("win");
+        gameScore = 0;
+        currentScore.textContent = 0;
+        theMessage.textContent = "You Win!!! Click Roll the Dice to try again."
+    }
+    else {
+        theMessage.textContent = "Keep on Rollin'"
+    }
 }
+
+
+rollDice.addEventListener("click", rollDie)
+
 
 
 //! Seb code

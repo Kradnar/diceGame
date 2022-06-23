@@ -21,8 +21,18 @@
     font-size: 50px;
 }
 #roll {
-    color: greenyellow;
-    font-size: 50px;
     display: flex;
     justify-content: center;
+}
+#rollBtn {
+    background-color: slategrey;
+    color: greenyellow;
+    font-size: 50px;
+}
+#rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+    color: aqua;
 }

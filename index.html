@@ -9,12 +9,31 @@
 </head>
 <body id="background">
     <h1 id="title">Dice Game</h1>
-    <div id="board">
-        <div id="score">Score</div>
-        <div id="dice"><img src="./images/1.png" alt="Dice Image"></div>
-    </div>
-    <div id="roll">Roll the Dice</div>
 
+
+
+    <div id="board">
+        <div id="score">
+            <p>Score</p>
+            <div id="scoreUpdate">0</div>
+        </div>
+
+
+        <div>
+            <img src="./images/1.png" id="dice" alt="Dice Image">
+        </div>
+    </div>
+    <br>
+
+
+    <!-- <div id="roll">Roll the Dice</div> -->
+    <div id="roll"><button id="rollBtn">Roll the Dice</button></div>
+
+
+    <div id="rules">
+        <p id="message">Click "Roll the Dice</p>
+        <p>Try to reach 20 without rolling a 1</p>
+    </div>
 </body>
 <footer>
     <script src="./app.js"></script>
