@@ -21,16 +21,12 @@ let diceSide = {
 }
 
 const rollDie = ()=>{
-    console.log("clicked")
     ranDie = Math.floor((Math.random()*6)+1)
     document.getElementById("dice").src = diceSide["d" + ranDie];
-    console.log(ranDie);
     gameScore = (gameScore + ranDie);
-    console.log(gameScore);
-    currentScore.textContent = gameScore
+    currentScore.textContent = gameScore;
 
     if (ranDie == fail && gameScore <= winValue) {
-        console.log("fail");
         gameScore = 0;
         currentScore.textContent = 0;
         // document.getElementById("dice").src = diceSide["d0"];
@@ -39,7 +35,6 @@ const rollDie = ()=>{
         document.getElementById("message").style.color = "white"
     }
     else if (gameScore >= winValue) {
-        console.log("win");
         gameScore = 0;
         currentScore.textContent = 0;
         // document.getElementById("dice").src = diceSide["d0"];
