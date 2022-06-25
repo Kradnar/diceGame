@@ -35,14 +35,14 @@ const rollDie = ()=>{
 
     if (ranDie == fail && gameScore <= winValue) {
         gameOver = true
-        // document.getElementById("dice").src = diceSide["d0"];
+        // document.getElementById("dice").src = diceSide["d0"]; //removes Dice image on Loss
         theMessage.innerText = loseMsg
         document.getElementById("message").style.backgroundColor = "red"
         document.getElementById("message").style.color = "white"
     }
     else if (gameScore >= winValue) {
         gameOver = true
-        // document.getElementById("dice").src = diceSide["d0"];
+        // document.getElementById("dice").src = diceSide["d0"]; //removes Dice image on Win
         theMessage.innerText = winMsg
         document.getElementById("message").style.backgroundColor = "green"
         document.getElementById("message").style.color = "white"
