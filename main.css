@@ -2,10 +2,6 @@
     background-color: rgb(178, 133, 220);
 }
 #title {
-    box-sizing: border-box;
-    border-width: 5px;
-    border-style: double;
-    background-color: wheat;
     color: darkslategray;
     text-align: center;
     margin: 100px;
@@ -20,11 +16,6 @@
     align-items: center;
 }
 #score {
-    box-sizing: border-box;
-    border-width: 5px;
-    border-style: double;
-    border-color: black;
-    background-color: wheat;
     padding: 0px 50px 20px;
     color: purple;
     font-size: 50px;
@@ -33,12 +24,7 @@
     align-items: center;
 }
 #dice {
-    box-sizing: border-box;
-    border-width: 5px;
-    border-style: double;
     padding: 50px 35px 50px;
-    border-color: black;
-    background-color: wheat;
     font-size: 50px;
 }
 #roll {
@@ -53,14 +39,12 @@
     transition: all 0.5s ease;
     transform: scale(1);
 }
-
 #rollBtn:hover {
     background-color: rgb(53, 60, 67);
     transform: scale(1.25);
     filter: brightness(120%);
     animation: blinking 1.5s infinite alternate;
 }
-
 @keyframes blinking {
     0% {
     color: greenyellow
@@ -69,17 +53,10 @@
     color: red;
     }
 }
-
 #message {
-    box-sizing: border-box;
-    border-width: 5px;
-    border-style: double;
-    border-color: black;
-    background-color: wheat;
     color: blueviolet;
     padding: 15px;
     text-align: center;
-
 }
 #rules {
     display: flex;
@@ -91,4 +68,11 @@
     box-sizing: border-box;
     margin: 5px 5px;
     color: aqua;
+}
+.wheatBkgd {
+    box-sizing: border-box;
+    border-width: 5px;
+    border-style: double;
+    border-color: black;
+    background-color: wheat;
 }

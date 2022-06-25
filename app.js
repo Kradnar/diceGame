@@ -1,15 +1,20 @@
+//! ---- DOM Links to HTML ID's ---- 
 const rollDice = document.querySelector("#rollBtn")
 const change = document.querySelector("#switchBtn")
 const theMessage = document.querySelector("#message")
 const currentScore = document.querySelector("#scoreUpdate")
 
+//! ---- Variables storing Win/Loss Messages
 const winMsg = "You Win!!!\nClick Roll the Dice to try again."
 const loseMsg = "You Lose!!!\nClick Roll the Dice to try again."
 
+//! ---- Modifiable variables ----
 let gameScore = 0;
 let fail = 1;
 let winValue = 20;
+let gameOver = true;
 
+//! ---- Array storing Dice images ----
 let diceSide = {
     d0:"./images/0.png",
     d1:"./images/1.png",
@@ -20,6 +25,8 @@ let diceSide = {
     d6:"./images/6.png"
 }
 
+//! ---- Functions Setup ----
+//!  --  Dice Roll Logic  --
 const rollDie = ()=>{
     ranDie = Math.floor((Math.random()*6)+1)
     document.getElementById("dice").src = diceSide["d" + ranDie];
@@ -27,16 +34,14 @@ const rollDie = ()=>{
     currentScore.textContent = gameScore;
 
     if (ranDie == fail && gameScore <= winValue) {
-        gameScore = 0;
-        currentScore.textContent = 0;
+        gameOver = true
         // document.getElementById("dice").src = diceSide["d0"];
         theMessage.innerText = loseMsg
         document.getElementById("message").style.backgroundColor = "red"
         document.getElementById("message").style.color = "white"
     }
     else if (gameScore >= winValue) {
-        gameScore = 0;
-        currentScore.textContent = 0;
+        gameOver = true
         // document.getElementById("dice").src = diceSide["d0"];
         theMessage.innerText = winMsg
         document.getElementById("message").style.backgroundColor = "green"
@@ -48,7 +53,18 @@ const rollDie = ()=>{
         document.getElementById("message").style.color = "blueviolet"
     }
 }
+//!  --  Ensures Score stays up  -- 
+const checkGameStatus = ()=>{
+    if (gameOver == true) {
+        gameScore = 0;
+        currentScore.textContent = 0;
+        gameOver = false
+        rollDie()
+    }
+    else {
+        rollDie()
+    }
+}
 
-
-rollDice.addEventListener("click", rollDie)
-
+//! ---- Event Listener that checks for Button Click ----
+rollDice.addEventListener("click", checkGameStatus)
