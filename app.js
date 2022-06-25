@@ -53,6 +53,7 @@ const rollDie = ()=>{
         document.getElementById("message").style.color = "blueviolet"
     }
 }
+
 //!  --  Ensures Score stays up  -- 
 const checkGameStatus = ()=>{
     if (gameOver == true) {
